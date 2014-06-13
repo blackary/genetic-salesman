@@ -1,4 +1,4 @@
-from genetics3 import *
+from genetics2 import *
 import sys
 
 def random(numberOfCities):

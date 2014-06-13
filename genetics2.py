@@ -82,6 +82,10 @@ class TourManager:
     def numberOfCities(self):
         return len(self.destinationCities)
 
+    def drawCities(self):
+        for city in self.destinationCities:
+            drawDot(city.getX(),city.getY())
+            pygame.display.flip()
 
 class Tour:
     def __init__(self, tourmanager, tour=None):
