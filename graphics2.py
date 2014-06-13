@@ -7,8 +7,9 @@ numberOfCities = 30
 populationCount = 50
 
 #tourmanager = city_generator.random(numberOfCities)
-tourmanager = city_generator.twenty_fixed()
+#tourmanager = city_generator.twenty_fixed()
 #tourmanager = city_generator.clickForCities()
+tourmanager = city_generator.fetch_fifty_files('fifty.txt')
 
 #Creates a "population" of candidates for best-tour (shortest path)
 pop = Population(tourmanager, populationCount, True)

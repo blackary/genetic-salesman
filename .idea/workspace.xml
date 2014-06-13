@@ -29,9 +29,11 @@
       <file leaf-file-name="genetics2.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/genetics2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3434" max-vertical-offset="4879">
-              <caret line="215" column="27" selection-start-line="215" selection-start-column="27" selection-end-line="215" selection-end-column="27" />
-              <folding />
+            <state vertical-scroll-proportion="95.10714" vertical-offset="3904" max-vertical-offset="4760">
+              <caret line="73" column="9" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="9" />
+              <folding>
+                <element signature="e#224#235#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -49,9 +51,11 @@
       <file leaf-file-name="graphics2.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/graphics2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="501" max-vertical-offset="986">
-              <caret line="0" column="14" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1003">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -59,9 +63,11 @@
       <file leaf-file-name="city_generator.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/city_generator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1343">
-              <caret line="0" column="14" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="665" max-vertical-offset="1700">
+              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -79,8 +85,8 @@
       <file leaf-file-name="graphics-animated.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/graphics-animated.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37871286" vertical-offset="527" max-vertical-offset="1122">
-              <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.65217394" vertical-offset="816" max-vertical-offset="1207">
+              <caret line="63" column="115" selection-start-line="63" selection-start-column="115" selection-end-line="63" selection-end-column="115" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -102,8 +108,8 @@
         <option value="$PROJECT_DIR$/genetics.py" />
         <option value="$PROJECT_DIR$/graphics.py" />
         <option value="$PROJECT_DIR$/genetics3.py" />
-        <option value="$PROJECT_DIR$/graphics2.py" />
         <option value="$PROJECT_DIR$/genetics2.py" />
+        <option value="$PROJECT_DIR$/graphics2.py" />
         <option value="$PROJECT_DIR$/city_generator.py" />
         <option value="$PROJECT_DIR$/graphics-animated.py" />
       </list>
@@ -200,24 +206,6 @@
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="genetic-algorithm" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="genetic-salesman" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/genetic-algorithm.py" />
-      <option name="PARAMETERS" value="" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
     <configuration default="false" name="genetics2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -267,6 +255,24 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="genetic-salesman" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/graphics-animated.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="city_generator" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="genetic-salesman" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/city_generator.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
@@ -395,18 +401,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.graphics" />
-      <item index="1" class="java.lang.String" itemvalue="Python.genetic-algorithm" />
-      <item index="2" class="java.lang.String" itemvalue="Python.genetics2" />
-      <item index="3" class="java.lang.String" itemvalue="Python.graphics2" />
-      <item index="4" class="java.lang.String" itemvalue="Python.graphics-animated" />
+      <item index="1" class="java.lang.String" itemvalue="Python.genetics2" />
+      <item index="2" class="java.lang.String" itemvalue="Python.graphics2" />
+      <item index="3" class="java.lang.String" itemvalue="Python.graphics-animated" />
+      <item index="4" class="java.lang.String" itemvalue="Python.city_generator" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.graphics-animated" />
-        <item index="1" class="java.lang.String" itemvalue="Python.graphics2" />
-        <item index="2" class="java.lang.String" itemvalue="Python.graphics" />
-        <item index="3" class="java.lang.String" itemvalue="Python.genetics2" />
-        <item index="4" class="java.lang.String" itemvalue="Python.genetic-algorithm" />
+        <item index="1" class="java.lang.String" itemvalue="Python.city_generator" />
+        <item index="2" class="java.lang.String" itemvalue="Python.graphics2" />
+        <item index="3" class="java.lang.String" itemvalue="Python.graphics" />
+        <item index="4" class="java.lang.String" itemvalue="Python.genetics2" />
       </list>
     </recent_temporary>
   </component>
@@ -471,7 +477,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4777">
           <caret line="19" column="65" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
-          <folding />
+          <folding>
+            <element signature="e#224#235#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -487,7 +495,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="986">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -495,7 +505,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="1343">
           <caret line="26" column="27" selection-start-line="12" selection-start-column="3" selection-end-line="26" selection-end-column="27" />
-          <folding />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -518,6 +530,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="4063" max-vertical-offset="5644">
           <caret line="239" column="29" selection-start-line="239" selection-start-column="29" selection-end-line="239" selection-end-column="29" />
+          <folding>
+            <element signature="e#224#235#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -555,6 +570,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.31648937" vertical-offset="408" max-vertical-offset="6290">
           <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="35" />
+          <folding>
+            <element signature="e#224#235#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -565,19 +583,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/graphics2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986">
-          <caret line="0" column="14" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/genetics3.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.396227" vertical-offset="1396" max-vertical-offset="4811">
           <caret line="129" column="53" selection-start-line="129" selection-start-column="42" selection-end-line="129" selection-end-column="53" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphics2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1003">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -591,24 +611,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/city_generator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1343">
-          <caret line="0" column="14" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="665" max-vertical-offset="1700">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/genetics2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3434" max-vertical-offset="4879">
-          <caret line="215" column="27" selection-start-line="215" selection-start-column="27" selection-end-line="215" selection-end-column="27" />
-          <folding />
+        <state vertical-scroll-proportion="95.10714" vertical-offset="3904" max-vertical-offset="4760">
+          <caret line="73" column="9" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="9" />
+          <folding>
+            <element signature="e#224#235#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/graphics-animated.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37871286" vertical-offset="527" max-vertical-offset="1122">
-          <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.65217394" vertical-offset="816" max-vertical-offset="1207">
+          <caret line="63" column="115" selection-start-line="63" selection-start-column="115" selection-end-line="63" selection-end-column="115" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>

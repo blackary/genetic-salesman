@@ -17,7 +17,7 @@ os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (x,y)
 pygame.init()
 myfont = pygame.font.SysFont("ariel", 30)
 
-window = pygame.display.set_mode((600, 700))
+window = pygame.display.set_mode((700, 700))
 
 def to_pygame(coords, height, obj_height=0):
     """Convert an object's coords into pygame coordinates (lower-left of object => top left in pygame coords)."""
@@ -209,11 +209,11 @@ class Population:
 
 
 class GA:
-    def __init__(self, tourmanager):
+    def __init__(self, tourmanager, mutationRate = 0.015, tournamentSize = 5, elitism = True):
         self.tourmanager = tourmanager
-        self.mutationRate = 0.015
-        self.tournamentSize = 5
-        self.elitism = True
+        self.mutationRate = mutationRate
+        self.tournamentSize = tournamentSize
+        self.elitism = elitism
 
     def evolvePopulation(self, pop):
         newPopulation = Population(self.tourmanager, pop.populationSize(), False)
@@ -273,12 +273,3 @@ class GA:
             tournament.saveTour(i, pop.getTour(randomId))
         fittest = tournament.getFittest()
         return fittest
-
-
-#input handling (somewhat boilerplate code):
-"""while True:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            sys.exit(0)"""
-            #else:
-            #print(event)

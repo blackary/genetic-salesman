@@ -1,5 +1,7 @@
 from genetics2 import *
 import sys
+import pickle
+from random import randrange
 
 def random(numberOfCities):
     tm = TourManager()
@@ -25,6 +27,25 @@ def clickForCities():
                 keepGoing = False
             if event.type == pygame.QUIT:
                 sys.exit(0)
+    return tm
+
+def generate_fifty_files(filename):
+    cityList = []
+    for i in range(50):
+        x = randrange(200)
+        y = randrange(200)
+        cityList.append((x,y))
+    with open(filename, 'wb') as f:
+        pickle.dump(cityList,f)
+
+def fetch_fifty_files(filename):
+    tm = TourManager()
+    with open(filename, 'rb') as f:
+        cityList = pickle.load(f)
+    for i in range(50):
+        x = cityList[i][0]
+        y = cityList[i][1]
+        tm.addCity(City(x,y))
     return tm
 
 def twenty_fixed():
@@ -71,3 +92,4 @@ def twenty_fixed():
    tm.addCity(city20)
    return tm
 
+#generate_fifty_files('fifty.pickle')
