@@ -4,11 +4,13 @@ import sys
 import city_generator
 import time
 numberOfCities = 50
-populationCount = 50
+populationCount = 100
 generationsBeforeChange = 10
 maxMutationRate = 0.05
 minTournamentSize = 2
-maxTournamentSize = 10
+maxTournamentSize = 8
+elitismMin = 1
+elitismMax = 5
 
 #tourmanager = city_generator.random(numberOfCities)
 #tourmanager = city_generator.twenty_fixed()
@@ -61,6 +63,9 @@ def main():
         #every N generation, change up the parameters of the GA
         if(generationCount%generationsBeforeChange==0):
             #pass
-            ga = GA(tourmanager,random.random()*maxMutationRate,random.randint(minTournamentSize,maxTournamentSize))
+            mutation = random.random()*maxMutationRate
+            tournament = random.randint(minTournamentSize,maxTournamentSize)
+            elitism = random.randint(elitismMin,elitismMax)
+            ga = GA(tourmanager,mutation,tournament,elitism)
 
 if __name__ == '__main__': main()
