@@ -87,6 +87,25 @@ class TourManager:
             drawDot(city.getX(),city.getY())
             pygame.display.flip()
 
+    def removeCity(self, index):
+        self.destinationCities.pop(index)
+
+    def swapCities(self,index1,index2):
+        self.destinationCities[index1],self.destinationCities[index2] = self.destinationCities[index2],self.destinationCities[index1]
+
+    def takeTour(self,color,width):
+        for cityIndex in range(len(self.destinationCities)):
+            fromCity = self.getCity(cityIndex)
+            destinationCity = None
+            if cityIndex + 1 < len(self.destinationCities):
+                destinationCity = self.getCity(cityIndex + 1)
+            else:
+                destinationCity = self.getCity(0)
+
+            drawBetween(fromCity,destinationCity,color,width)
+
+        pygame.display.flip()
+
 class Tour:
     def __init__(self, tourmanager, tour=None):
         self.tourmanager = tourmanager
@@ -203,6 +222,10 @@ class Population:
     def drawFittestTour(self,color,width):
         fittest = self.getFittest()
         fittest.takeTour(color,width)
+
+    def drawFirstTour(self,color,width):
+        first = self.tours[0]
+        first.takeTour(color,width)
 
     def populationSize(self):
         return len(self.tours)
