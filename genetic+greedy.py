@@ -133,21 +133,21 @@ def main():
             #tourmanager = city_generator.clickForCities()
             #tourmanager = city_generator.fetch_fifty_files('fifty.pickle')
             print("Tourmanager: ",tourmanager)
-            print("Running greedy:")
+            print("Running greedy...")
             start = time.time()
             greedyLen,tm2 = runGreedy(tourmanager, display=False)
             done = time.time()
             greedyTime = done - start
 
             #print("Tourmanager: ",tourmanager)
-            print("Running genetic:")
+            print("Running genetic...")
             start = time.time()
             #Run genetic algorithm for 400 generations
             geneticLen = runGenetic(tourmanager,generationCount,display=False)
             done = time.time()
             geneticTime = done-start
 
-            print("Running greedy genetic:")
+            print("Running greedy genetic...")
             start = time.time()
             #Run greedy+genetic algorithm
             pop = Population(tourmanager, populationCount, True)
@@ -158,7 +158,7 @@ def main():
             done = time.time()
             geneticPlusTime = done-start
 
-            print("Loop number", i)
+            print("****************Loop number", i, "*************************")
             print("Greedy time: ", greedyTime)
             print("Greedy length: ", greedyLen)
             print("Genetic time: ", geneticTime)
@@ -166,8 +166,7 @@ def main():
             print("Genetic+ time: ", geneticPlusTime)
             print("Genetic+ length: ", geneticPlusLen)
 
-            data = "{},{},{},{},{},{}".format(greedyTime,greedyLen,geneticTime,geneticLen,geneticPlusTime,geneticPlusLen)
-            data = data.split(",")
+            data = [greedyTime,greedyLen,geneticTime,geneticLen,geneticPlusTime,geneticPlusLen]
             writer.writerow(data)
 
     """while(True):
