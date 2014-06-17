@@ -4,7 +4,7 @@
   <head>
     <meta charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Genetic-salesman : Solving the Travelling Salesman problem with a genetic algorithm" />
+    <meta name="description" content="Genetic-salesman : Solving the Travelling Salesman Problem with a Greedy Genetic Algorithm" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
@@ -19,7 +19,7 @@
           <a id="forkme_banner" href="https://github.com/zblackwo/genetic-salesman">View on GitHub</a>
 
           <h1 id="project_title">Genetic-salesman</h1>
-          <h2 id="project_tagline">Solving the Travelling Salesman problem with a genetic algorithm</h2>
+          <h2 id="project_tagline">Solving the Travelling Salesman Problem with a Greedy Genetic Algorithm</h2>
 
             <section id="downloads">
               <a class="zip_download_link" href="https://github.com/zblackwo/genetic-salesman/zipball/master">Download this project as a .zip file</a>
@@ -31,10 +31,29 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+        <h2>
+<a name="traveling-salesman-problem" class="anchor" href="#traveling-salesman-problem"><span class="octicon octicon-link"></span></a>Traveling Salesman Problem.</h2>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>If you have a number of different cities to visit, spread all over the map, how do you find the shortest path from one, to the next, to the next, and finally back to the first city?</p>
+
+<p>A simple problem with 4 cities, but what about 10? 100?
+If there are <em>N</em> cities, there are <em>N!</em> different paths. 
+If N is 30, N! is 30x29x28...x3x2x1 = <strong>2.65x10^32</strong></p>
+
+<hr><h2>
+<a name="two-possible-solutions" class="anchor" href="#two-possible-solutions"><span class="octicon octicon-link"></span></a>Two Possible Solutions.</h2>
+
+<ul>
+<li>Greedy Algorithm</li>
+<li>Genetic Algorithm</li>
+</ul><h3>
+<a name="greedy-algorithm" class="anchor" href="#greedy-algorithm"><span class="octicon octicon-link"></span></a>Greedy Algorithm</h3>
+
+<p>Basic idea: Start with 1 city, find the next closest city, and repeat until you've run out of cities left (then go back to the first)</p>
+
+<p><strong>Advantages</strong> Relatively fast algorithm. O(N^2), rather than N! - a significant improvement. Gives a <em>decent</em> solution.</p>
+
+<p><strong>Disadvantages</strong> Never gives an ideal solution. Typically the first "end" of the path is inefficient. Doesn't consider the "big picture".</p>
 
 <pre><code>$ cd your_repo_root/repo_name
 $ git fetch origin
