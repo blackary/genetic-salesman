@@ -14,7 +14,7 @@ minTournamentSize = 2
 maxTournamentSize = 8
 elitismMin = 1
 elitismMax = 1
-totalIterations = 5
+totalIterations = 100
 generationCount = 400
 
 def runGreedy(tm, display = True):
