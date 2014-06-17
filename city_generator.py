@@ -3,10 +3,10 @@ import sys
 import pickle
 from random import randrange
 
-def random(numberOfCities):
+def random(numberOfCities,display=True):
     tm = TourManager()
     for i in range(numberOfCities):
-        tm.addCity(City())
+        tm.addCity(City(),display)
     return tm
 
 def clickForCities():
@@ -38,14 +38,14 @@ def generate_fifty_files(filename):
     with open(filename, 'wb') as f:
         pickle.dump(cityList,f)
 
-def fetch_fifty_files(filename):
+def fetch_fifty_files(filename,display=True):
     tm = TourManager()
     with open(filename, 'rb') as f:
         cityList = pickle.load(f)
     for i in range(50):
         x = cityList[i][0]
         y = cityList[i][1]
-        tm.addCity(City(x,y))
+        tm.addCity(City(x,y),display)
     return tm
 
 def twenty_fixed():

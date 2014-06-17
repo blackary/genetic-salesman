@@ -18,23 +18,10 @@ def totalLength(tourmanager):
         else:
             length += distance(tourmanager.getCity(i),tourmanager.getCity(0))
     return length
-"""
-def greedy(tourmanager):
-    newTour = Tour(tourmanager,[])
-    newTour.setCity(0,)
-    for i in range(tourmanager.numberOfCities()):
-        minDistance = 1000000000
-        thisCity = tourmanager.getCity(i)
-        for j in range(i+1,tourmanager.numberOfCities()):
-            thatCity = tourmanager.getCity(j)
-            dist = distance(thisCity,thatCity)
-            if (dist < minDistance):
-                minDistance = dist
-"""
 
 def greedy_TSP(tourmanager):
     "At each step, visit the nearest neighbor that is still unvisited."
-    cities = tourmanager.destinationCities
+    cities = tourmanager.destinationCities[:]
     start = first(cities)
     tour = [start]
     for x in [start]:

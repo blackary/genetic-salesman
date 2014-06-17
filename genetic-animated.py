@@ -8,7 +8,7 @@ import greedy
 numberOfCities = 50
 populationCount = 100
 generationsBeforeChange = 10
-maxMutationRate = 0.05
+maxMutationRate = 0.25
 minTournamentSize = 2
 maxTournamentSize = 8
 elitismMin = 1
@@ -61,11 +61,22 @@ def runGenetic(tm,generations):
     """
     for i in range(generations):
         pop = ga.evolvePopulation(pop)
-        #generationCount += 1
-        #print("Generation count: ", i)
-        #newShortest = int(pop.getFittest().getDistance())
-        #if(newShortest != currentShortest):
-
+        generationCount += 1
+        print("Generation count: ", i)
+        newShortest = int(pop.getFittest().getDistance())
+        if(newShortest != currentShortest):
+            tm.drawCities()
+            text = "After "
+            text += str(i)
+            text += " generations, distance = "
+            text += str(int(pop.getFittest().getDistance()))
+            text += ", "
+            text += str(int(currentShortest - pop.getFittest().getDistance()))
+            text += " units shorter"
+            writeText(text,(255,255,255), printLocation+20)
+            pop.drawFittestTour((255,0,0),2)
+            pygame.display.flip()
+            currentShortest = newShortest
         #every N generation, change up the parameters of the GA
         if(i%generationsBeforeChange==0):
             #pass
@@ -73,19 +84,8 @@ def runGenetic(tm,generations):
             tournament = random.randint(minTournamentSize,maxTournamentSize)
             elitism = random.randint(elitismMin,elitismMax)
             ga = GA(tm,mutation,tournament,elitism)
+        window.fill((0,0,0))
 
-    #window.fill((0,0,0))
-    tm.drawCities()
-    text = "After "
-    text += str(generations)
-    text += " generations, distance = "
-    text += str(int(pop.getFittest().getDistance()))
-    text += ", "
-    text += str(int(currentShortest - pop.getFittest().getDistance()))
-    text += " units shorter"
-    writeText(text,(255,255,255), printLocation+20)
-    pop.drawFittestTour((255,255,255),1)
-    pygame.display.flip()
 
     return int(pop.getFittest().getDistance())
 
@@ -94,19 +94,19 @@ def main():
 
     #runGreedy(tourmanager)
 
-    start = time.time()
+    """start = time.time()
     greedyLen = runGreedy(tourmanager)
     done = time.time()
-    greedyTime = done - start
+    greedyTime = done - start"""
 
     start = time.time()
     #Run genetic algorithm for 400 generations
-    geneticLen = runGenetic(tourmanager,400)
+    geneticLen = runGenetic(tourmanager,1000)
     done = time.time()
     geneticTime = done-start
 
-    print("Greedy time: ", greedyTime)
-    print("Greedy length: ", greedyLen)
+    #print("Greedy time: ", greedyTime)
+    #print("Greedy length: ", greedyLen)
     print("Genetic time: ", geneticTime)
     print("Genetic length: ", geneticLen)
 

@@ -17,7 +17,7 @@ os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (x,y)
 pygame.init()
 myfont = pygame.font.SysFont("ariel", 30)
 
-window = pygame.display.set_mode((700, 700))
+#window = pygame.display.set_mode((700, 700))
 
 def to_pygame(coords, height, obj_height=0):
     """Convert an object's coords into pygame coordinates (lower-left of object => top left in pygame coords)."""
@@ -69,12 +69,20 @@ class City:
 
 
 class TourManager:
-    destinationCities = []
+    def __init__(self):
+        self.destinationCities = []
 
-    def addCity(self, city):
+    def __repr__(self):
+        geneString = "|"
+        for city in self.destinationCities:
+            geneString += str(city) + "|"
+        return geneString
+
+    def addCity(self, city, display=True):
         self.destinationCities.append(city)
-        drawDot(city.getX(),city.getY())
-        pygame.display.flip()
+        if display:
+            drawDot(city.getX(),city.getY())
+            pygame.display.flip()
 
     def getCity(self, index):
         return self.destinationCities[index]
