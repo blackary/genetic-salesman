@@ -8,36 +8,40 @@ that can be found at: http://goo.gl/cJEY1
 
 import math
 import random
+import turtle
 import pygame
-x = 100
-y = 20
-import os
-os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (x,y)
+import sys
 
 pygame.init()
-myfont = pygame.font.SysFont("ariel", 30)
-
-window = pygame.display.set_mode((700, 700))
 
 def to_pygame(coords, height, obj_height=0):
     """Convert an object's coords into pygame coordinates (lower-left of object => top left in pygame coords)."""
-    return (coords[0]*3, (height - coords[1] - obj_height)*3 + 100)
+    return (coords[0]*3, (height - coords[1] - obj_height)*3)
 
 def drawDot(x,y):
     pygame.draw.circle(window, (255,255,255), to_pygame((x,y), 200, 2), 5, 2)
 
-def drawBetween(A,B,color,width):
+def drawBetween(A,B,color):
     x1 = A.getX()
     y1 = A.getY()
     x2 = B.getX()
     y2 = B.getY()
 
-    pygame.draw.line(window, color, to_pygame((x1, y1),200), to_pygame((x2, y2),200),width)
+    pygame.draw.line(window, color, to_pygame((x1, y1),200), to_pygame((x2, y2),200))
 
-def writeText(text,color,distanceFromTop):
-    label = myfont.render(text, 1, color)
-    window.blit(label, (20, distanceFromTop))
-    pygame.display.flip()
+def writeText(text,color,location):
+
+
+
+#pygame.draw.line(window, (255, 255, 255), (0, 0), (30, 50))
+
+#pygame.draw.circle(window, (255, 255, 255), (50, 50), 5, 2)
+
+#drawDot(50,50)
+#drawBetween(City(),City())
+
+#draw it to the screen
+#pygame.display.flip()
 
 class City:
     def __init__(self, x=None, y=None):
@@ -69,20 +73,17 @@ class City:
 
 
 class TourManager:
-    def __init__(self):
-        self.destinationCities = []
+    # create the screen
+    window = pygame.display.set_mode((600, 600))
 
-    def __repr__(self):
-        geneString = "|"
-        for city in self.destinationCities:
-            geneString += str(city) + "|"
-        return geneString
+    destinationCities = []
+    #t = turtle.Turtle()
+    #t.color('red')
 
-    def addCity(self, city, display=True):
+    def addCity(self, city):
         self.destinationCities.append(city)
-        if display:
-            drawDot(city.getX(),city.getY())
-            pygame.display.flip()
+        drawDot(city.getX(),city.getY())
+        pygame.display.flip()
 
     def getCity(self, index):
         return self.destinationCities[index]
@@ -90,29 +91,30 @@ class TourManager:
     def numberOfCities(self):
         return len(self.destinationCities)
 
-    def drawCities(self):
-        for city in self.destinationCities:
-            drawDot(city.getX(),city.getY())
-            pygame.display.flip()
+    """def drawDot(self,x,y):
+        self.t.speed(0)
+        self.t.penup()
+        self.t.goto(x,y)
+        self.t.dot(5,"blue")
 
-    def removeCity(self, index):
-        self.destinationCities.pop(index)
+    def drawDots(self):
+        for i in range(self.numberOfCities()):
+            city = self.getCity(i)
+            x = city.getX()
+            y = city.getY()
+            self.drawDot(x,y)
 
-    def swapCities(self,index1,index2):
-        self.destinationCities[index1],self.destinationCities[index2] = self.destinationCities[index2],self.destinationCities[index1]
-
-    def takeTour(self,color,width):
-        for cityIndex in range(len(self.destinationCities)):
-            fromCity = self.getCity(cityIndex)
-            destinationCity = None
-            if cityIndex + 1 < len(self.destinationCities):
-                destinationCity = self.getCity(cityIndex + 1)
-            else:
-                destinationCity = self.getCity(0)
-
-            drawBetween(fromCity,destinationCity,color,width)
-
-        pygame.display.flip()
+    def takeTour(self,pencolor):
+        self.t.pencolor(pencolor)
+        self.t.pendown()
+        x = self.getCity(0).getX()
+        y = self.getCity(0).getY()
+        self.t.goto(x,y)
+        for i in range(self.numberOfCities()):
+            city = self.getCity(i)
+            x = city.getX()
+            y = city.getY()
+            self.t.goto(x,y)"""
 
 class Tour:
     def __init__(self, tourmanager, tour=None):
@@ -125,8 +127,7 @@ class Tour:
         else:
             for i in range(0, self.tourmanager.numberOfCities()):
                 self.tour.append(None)
-
-        #self.t = turtle.Turtle()
+        self.t = turtle.Turtle()
 
     def __len__(self):
         return len(self.tour)
@@ -181,20 +182,17 @@ class Tour:
     def containsCity(self, city):
         return city in self.tour
 
-
-    def takeTour(self,color,width):
-        for cityIndex in range(0, self.tourSize()):
-            fromCity = self.getCity(cityIndex)
-            destinationCity = None
-            if cityIndex + 1 < self.tourSize():
-                destinationCity = self.getCity(cityIndex + 1)
-            else:
-                destinationCity = self.getCity(0)
-
-            drawBetween(fromCity,destinationCity,color,width)
-
-            pygame.display.flip()
-
+    def takeTour(self,pencolor):
+        self.t.pencolor(pencolor)
+        self.t.pendown()
+        x = self.tourmanager.getCity(0).getX()
+        y = self.tourmanager.getCity(0).getY()
+        self.t.goto(x,y)
+        for i in range(self.tourmanager.numberOfCities()):
+            city = self.tourmanager.getCity(i)
+            x = city.getX()
+            y = city.getY()
+            self.t.goto(x,y)
 
 class Population:
     def __init__(self, tourmanager, populationSize, initialise):
@@ -220,37 +218,32 @@ class Population:
     def getTour(self, index):
         return self.tours[index]
 
-    def getFittest(self, start=0):
+    def getFittest(self):
         fittest = self.tours[0]
-        for i in range(start, self.populationSize()):
+        for i in range(0, self.populationSize()):
             if fittest.getFitness() <= self.getTour(i).getFitness():
                 fittest = self.getTour(i)
         return fittest
 
-    def drawFittestTour(self,color,width):
-        fittest = self.getFittest()
-        fittest.takeTour(color,width)
-
-    def drawFirstTour(self,color,width):
-        first = self.tours[0]
-        first.takeTour(color,width)
-
     def populationSize(self):
         return len(self.tours)
 
+    def fittestTour(self,color):
+        self.getFittest().takeTour(color)
 
 class GA:
-    def __init__(self, tourmanager, mutationRate = 0.015, tournamentSize = 5, elitism = 1):
+    def __init__(self, tourmanager):
         self.tourmanager = tourmanager
-        self.mutationRate = mutationRate
-        self.tournamentSize = tournamentSize
-        self.elitism = elitism
+        self.mutationRate = 0.015
+        self.tournamentSize = 5
+        self.elitism = True
 
     def evolvePopulation(self, pop):
         newPopulation = Population(self.tourmanager, pop.populationSize(), False)
-        elitismOffset = self.elitism
-        for i in range(elitismOffset):
-            newPopulation.saveTour(i, pop.getFittest(i))
+        elitismOffset = 0
+        if self.elitism:
+            newPopulation.saveTour(0, pop.getFittest())
+            elitismOffset = 1
 
         for i in range(elitismOffset, newPopulation.populationSize()):
             parent1 = self.tournamentSelection(pop)
@@ -303,3 +296,69 @@ class GA:
             tournament.saveTour(i, pop.getTour(randomId))
         fittest = tournament.getFittest()
         return fittest
+
+
+
+if __name__ == '__main__':
+
+    tourmanager = TourManager()
+    for i in range(20):
+        tourmanager.addCity(City(random.random() * 200, random.random() * 200))
+    # Create and add our cities
+    """city = City(60, 200)
+   tourmanager.addCity(city)
+   city2 = City(180, 200)
+   tourmanager.addCity(city2)
+   city3 = City(80, 180)
+   tourmanager.addCity(city3)
+   city4 = City(140, 180)
+   tourmanager.addCity(city4)
+   city5 = City(20, 160)
+   tourmanager.addCity(city5)
+   city6 = City(100, 160)
+   tourmanager.addCity(city6)
+   city7 = City(200, 160)
+   tourmanager.addCity(city7)
+   city8 = City(140, 140)
+   tourmanager.addCity(city8)
+   city9 = City(40, 120)
+   tourmanager.addCity(city9)
+   city10 = City(100, 120)
+   tourmanager.addCity(city10)
+   city11 = City(180, 100)
+   tourmanager.addCity(city11)
+   city12 = City(60, 80)
+   tourmanager.addCity(city12)
+   city13 = City(120, 80)
+   tourmanager.addCity(city13)
+   city14 = City(180, 60)
+   tourmanager.addCity(city14)
+   city15 = City(20, 40)
+   tourmanager.addCity(city15)
+   city16 = City(100, 40)
+   tourmanager.addCity(city16)
+   city17 = City(200, 40)
+   tourmanager.addCity(city17)
+   city18 = City(20, 20)
+   tourmanager.addCity(city18)
+   city19 = City(60, 20)
+   tourmanager.addCity(city19)
+   city20 = City(160, 20)
+   tourmanager.addCity(city20)"""
+
+# Initialize population
+"""    pop = Population(tourmanager, 50, True)
+    print("Initial distance: " + str(pop.getFittest().getDistance()))
+
+    # Evolve population for 50 generations
+    ga = GA(tourmanager)
+    pop = ga.evolvePopulation(pop)
+    for i in range(0, 100):
+        pop = ga.evolvePopulation(pop)
+
+    # Print final results
+    print("Finished")
+    print("Final distance: " + str(pop.getFittest().getDistance()))
+    print("Solution:")
+    print(pop.getFittest())"""
+

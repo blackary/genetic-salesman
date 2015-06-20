@@ -1,4 +1,4 @@
-from genetics import *
+from genetics2 import *
 import sys
 import pickle
 from random import randrange
@@ -12,8 +12,6 @@ def random(numberOfCities,display=True):
 def clickForCities():
     tm = TourManager()
     keepGoing = True
-    text = "Click to add cities, press any key to finish"
-    writeText(text,(255,0,0), 20)
     while(keepGoing):
         ev = pygame.event.get()
         # proceed events

@@ -1,4 +1,4 @@
-import genetics
+import genetics2
 import random
 import math
 
